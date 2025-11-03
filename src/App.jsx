@@ -5,9 +5,19 @@ function App() {
   const dispatch = useDispatch();
   return (
     <>
-      <button onClick={() => dispatch(addToCart())}>Add to cart</button>
+      <button
+        onClick={() =>
+          dispatch(
+            addToCart({
+              name: "Cart Track",
+            })
+          )
+        }
+      >
+        Add to cart
+      </button>
     </>
   );
 }
- 
+
 export default App;
