@@ -1,23 +1,11 @@
-import { useDispatch } from "react-redux";
-import { addToCart } from "./store/action";
 import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
-  const dispatch = useDispatch();
   return (
     <div>
       <Header />
-      <button
-        onClick={() =>
-          dispatch(
-            addToCart({
-              name: "Cart Track",
-            })
-          )
-        }
-      >
-        Add to cart
-      </button>
+      <Main />
     </div>
   );
 }

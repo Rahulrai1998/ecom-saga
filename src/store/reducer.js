@@ -4,7 +4,7 @@ export const cartData = (data = [], action) => {
   switch (action.type) {
     case ADD_TO_CART:
       console.log("ACTION CALLED", action.type);
-      return { ...data };
+      return [...data, action.data];
     case REMOVE_FROM_CART:
       console.log("ACTION CALLED", action.type);
       return;
