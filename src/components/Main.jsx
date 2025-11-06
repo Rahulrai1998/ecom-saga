@@ -8,7 +8,10 @@ function Main() {
         onClick={() =>
           dispatch(
             addToCart({
-              name: "Cart Track",
+              name: "Realme 65s",
+              category: "Phones",
+              price: 123456,
+              color: "red",
             })
           )
         }

@@ -7,6 +7,7 @@ export const cartData = (data = [], action) => {
       return [...data, action.data];
     case REMOVE_FROM_CART:
       console.log("ACTION CALLED", action.type);
+      
       return;
     default:
       return data;
