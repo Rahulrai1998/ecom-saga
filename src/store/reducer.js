@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./constant";
+import { ADD_TO_CART, EMPTY_CART, REMOVE_FROM_CART } from "./constant";
 
 export const cartData = (data = [], action) => {
   switch (action.type) {
@@ -7,8 +7,13 @@ export const cartData = (data = [], action) => {
       return [...data, action.data];
     case REMOVE_FROM_CART:
       console.log("ACTION CALLED", action.type);
-      
-      return;
+      if (data.length) data.length--;
+      return [...data];
+    // return data.filter((obj) => action.data !== obj.name);
+    case EMPTY_CART:
+      console.log("ACTION CALLED", action.type);
+      if (data.length) data = [];
+      return [...data];
     default:
       return data;
   }

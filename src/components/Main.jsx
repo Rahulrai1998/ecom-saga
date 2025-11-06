@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/action";
+import { addToCart, emptyCart, removeFromCart } from "../store/action";
 function Main() {
   const dispatch = useDispatch();
   return (
@@ -8,7 +8,7 @@ function Main() {
         onClick={() =>
           dispatch(
             addToCart({
-              name: "Realme 65s",
+              name: "Realme 6s",
               category: "Phones",
               price: 123456,
               color: "red",
@@ -18,6 +18,10 @@ function Main() {
       >
         Add to cart
       </button>
+      <button onClick={() => dispatch(removeFromCart("Realme 65s"))}>
+        Remove from cart
+      </button>
+      <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
     </div>
   );
 }
