@@ -1,7 +1,12 @@
 import { useDispatch } from "react-redux";
 import { addToCart, emptyCart, removeFromCart } from "../store/action";
+import { listProduct } from "../store/productAction";
+import { useSelector } from "react-redux";
+
 function Main() {
   const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productListData);
+  console.log(productList);
   return (
     <div>
       <button
@@ -22,6 +27,7 @@ function Main() {
         Remove from cart
       </button>
       <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
+      <button onClick={() => dispatch(listProduct())}>Get Product list</button>
     </div>
   );
 }
