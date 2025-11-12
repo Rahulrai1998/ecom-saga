@@ -3,7 +3,7 @@ import { PRODUCT_LIST } from "./constant";
 export const productListData = (data = [], action) => {
   switch (action.type) {
     case PRODUCT_LIST:
-      console.log(action)
+      console.log(action.data,"API DATA");
       return [...data, action.data];
       break;
     default:
