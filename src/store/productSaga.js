@@ -1,12 +1,21 @@
-import { takeEvery } from "redux-saga/effects";
-import { PRODUCT_LIST } from "./constant";
+import { put, takeEvery } from "redux-saga/effects";
+import { PRODUCT_LIST, STORE_PRODUCTS } from "./constant";
+import { call } from "redux-saga/effects";
 
+
+//GENERATOR FUNCTION, CALLED AFTER THE THE WATCHER FUNCTION DETECTS A
+//SPECIFIC ACTION DISPATCHED WITH CERTAIN KEY.
 function* getProducts() {
   let response = yield call(fetch, "http://localhost:3000/products");
   const data = yield response.json();
-  console.log("API into saga", data);
+
+  yield put({ type: STORE_PRODUCTS, data }); //NEW ACTION DISPTACHED, IT WILL SEND DATA TO REDUCER AND THEN STORE.
 }
 
+//WATCHER SAGA: WATCHES FOR ACTION CALLED WITH PROVIDED TYPE.
+//THEN CALL THE GENERATOR FUNCTION FOR API CALLS AND THEN
+//CALLS ANOTHER ACTION TO SEND THE API DATA BACK TO REDUCER
+//ANS STORE TO BE USED IN VIEW.
 function* productSaga() {
   yield takeEvery(PRODUCT_LIST, getProducts);
 }

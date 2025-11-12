@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 function Main() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productListData);
-  console.log(productList);
+  console.log(productList, "VIEW LIST");
   return (
     <div>
       <button
@@ -28,6 +28,10 @@ function Main() {
       </button>
       <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
       <button onClick={() => dispatch(listProduct())}>Get Product list</button>
+
+      {productList.map((prod) => (
+        <div>{prod.name}</div>
+      ))}
     </div>
   );
 }
