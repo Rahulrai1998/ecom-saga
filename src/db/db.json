@@ -1,5 +1,5 @@
 {
-    "product": [
+    "products": [
         {
             "id": "1",
             "name": "Phone one",
@@ -11,29 +11,29 @@
         },
         {
             "id": "2",
-            "name": "Phone one",
-            "color": "red",
-            "price": 123654,
-            "category": "mobile",
-            "brand": "Redme",
+            "name": "Hp envy",
+            "color": "white",
+            "price": 82000,
+            "category": "laptops",
+            "brand": "dell",
             "photo": ""
         },
         {
             "id": "3",
-            "name": "Phone one",
-            "color": "red",
-            "price": 123654,
-            "category": "mobile",
-            "brand": "Redme",
+            "name": "Car",
+            "color": "black",
+            "price": 1400000,
+            "category": "auto-mobile",
+            "brand": "Hyundai",
             "photo": ""
         },
         {
             "id": "4",
-            "name": "Phone one",
-            "color": "red",
-            "price": 123654,
-            "category": "mobile",
-            "brand": "Redme",
+            "name": "Glasses",
+            "color": "white",
+            "price": 14,
+            "category": "utensils",
+            "brand": "Ajanta",
             "photo": ""
         }
     ]
