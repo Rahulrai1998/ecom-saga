@@ -9,6 +9,6 @@ export const productListData = (data = [], action) => {
       console.log(action.data, "API DATA");
       return [...data, ...action.data];
     default:
-      return [];
+      return data;
   }
 };

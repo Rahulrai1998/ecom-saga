@@ -1,4 +1,4 @@
-import { put, takeEvery } from "redux-saga/effects";
+import { put, takeEvery, select } from "redux-saga/effects";
 import { PRODUCT_LIST, STORE_PRODUCTS } from "./constant";
 import { call } from "redux-saga/effects";
 
@@ -6,6 +6,10 @@ import { call } from "redux-saga/effects";
 //GENERATOR FUNCTION, CALLED AFTER THE THE WATCHER FUNCTION DETECTS A
 //SPECIFIC ACTION DISPATCHED WITH CERTAIN KEY.
 function* getProducts() {
+  // If products already exist in store, skip fetching again (avoids double fetch in React StrictMode)
+  const existing = yield select((state) => state.productListData);
+  if (existing && existing.length) return;
+
   let response = yield call(fetch, "http://localhost:3000/products");
   const data = yield response.json();
 

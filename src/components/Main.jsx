@@ -11,7 +11,7 @@ function Main() {
 
   useEffect(() => {
     dispatch(listProduct());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div>
