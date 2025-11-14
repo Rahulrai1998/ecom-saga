@@ -7,8 +7,8 @@ export const cartData = (data = [], action) => {
       return [...data, action.data];
     case REMOVE_FROM_CART:
       console.log("ACTION CALLED", action.type);
-      if (data.length) data.length--;
-      return [...data];
+      if (!data.length) return;
+      return data.filter((prod) => prod.id !== action.data);
     // return data.filter((obj) => action.data !== obj.name);
     case EMPTY_CART:
       console.log("ACTION CALLED", action.type);

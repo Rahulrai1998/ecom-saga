@@ -4,8 +4,8 @@ export const addToCart = (data) => {
   return { type: ADD_TO_CART, data };
 };
 
-export const removeFromCart = (name) => {
-  return { type: REMOVE_FROM_CART, data: name };
+export const removeFromCart = (id) => {
+  return { type: REMOVE_FROM_CART, data: id };
 };
 
 export const emptyCart = () => {

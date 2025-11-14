@@ -58,16 +58,7 @@ function Main() {
                   borderRadius: "6px",
                   backgroundColor: "grey",
                 }}
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      name: "Realme 6s",
-                      category: "Phones",
-                      price: 123456,
-                      color: "red",
-                    })
-                  )
-                }
+                onClick={() => dispatch(addToCart(prod))}
               >
                 Add to cart
               </button>
@@ -77,7 +68,7 @@ function Main() {
                   borderRadius: "6px",
                   backgroundColor: "grey",
                 }}
-                onClick={() => dispatch(removeFromCart("Realme 65s"))}
+                onClick={() => dispatch(removeFromCart(prod.id))}
               >
                 Remove from cart
               </button>
