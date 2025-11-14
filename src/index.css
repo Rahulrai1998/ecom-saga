@@ -1,6 +1,18 @@
 .header {
   background-color: rgb(237, 89, 89);
   height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    color: aliceblue;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .cart-div {

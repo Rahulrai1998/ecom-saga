@@ -8,14 +8,19 @@ const Header = () => {
   console.log(result);
   return (
     <div className="header">
-      <Link to={"cart"}>
-        <div className="cart-div">
-          <span className="cart-item-count">{result.length}</span>
-          <span>
-            <ShoppingCart color="#fff" className="cart-icon" />
-          </span>
-        </div>
+      <Link to={"/"}>
+        <h2>Ecom-saga</h2>
       </Link>
+      <div>
+        <Link to={"cart"}>
+          <div className="cart-div">
+            <span className="cart-item-count">{result.length}</span>
+            <span>
+              <ShoppingCart color="#fff" className="cart-icon" />
+            </span>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
