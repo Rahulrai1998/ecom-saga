@@ -7,7 +7,7 @@ export const productListData = (data = [], action) => {
     //   break;
     case STORE_PRODUCTS:
       console.log(action.data, "API DATA");
-      return [...data, ...action.data];
+      return [...action.data];
     default:
       return data;
   }

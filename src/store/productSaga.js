@@ -15,8 +15,15 @@ function* getProducts() {
   yield put({ type: STORE_PRODUCTS, data }); //NEW ACTION DISPTACHED, IT WILL SEND DATA TO REDUCER AND THEN STORE.
 }
 
-function* searchProductWroker() {
-  
+function* searchProductWorker(queryData) {
+  let response = yield call(
+    fetch,
+    `http://localhost:3000/products?name=${queryData.query}`
+  );
+
+  const data = yield response.json();
+  console.log(data, "SEARCH RESULT");
+  yield put({ type: STORE_PRODUCTS, data });
 }
 
 //WATCHER SAGA: WATCHES FOR ACTION CALLED WITH PROVIDED TYPE.
